@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "iconfont 一键复制 SVG",
+  "version": "1.0.1",
+  "description": "适用于 iconfont 快速复制 SVG/PNG，支持图标/插画分别设置尺寸",
+  "permissions": ["storage", "clipboardWrite"],
+  "host_permissions": ["https://www.iconfont.cn/*"],
+  "action": {
+    "default_title": "点击打开设置弹框",
+    "default_icon": {
+      "128": "icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "128": "icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.iconfont.cn/*"],
+      "js": ["sweetalert2.min.js", "content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["layout.css"],
+      "matches": ["https://www.iconfont.cn/*"]
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+/* iconfont 搜索结果紧凑布局 */
+ul.block-icon-list {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-gap: 8px 8px;
+}
+/* 插画图片，全展示不裁剪 */
+.block-mixo-list li .icon-twrap img {
+    object-fit: contain;
+}
+/* 插画紧凑布局 */
+ul.block-mixo-list {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+}
+/*图标距离上方的距离*/
+.page-collection-detail-wrap {
+    padding-top: 60px;
+}
+/*鼠标经过图标的样式*/
+.block-icon-list li {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+
+/*修复官方-搜索框下拉图标切换成插画，列表会竖排bug*/
+.page-search-container {
+    padding-top: 20px;
+    width: 100%;
+}
+.page-search-container.illustration-detail > .block-icon-list.block-svg-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+}
+.page-search-container.illustration-detail > .block-icon-list.block-svg-list > li {
+    width: 160px;
+    height: 210px !important;
+}
+.page-search-container.illustration-detail > .block-icon-list.block-svg-list > li > .icon-twrap {
+    width: 160px;
+    height: 160px !important;
+    margin-top: 0;
+}
